@@ -1,24 +1,39 @@
-# README
+## users table
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+| Column             |  Type   |  Option    |
+|-------------------------------------------|
+| email              | string  | ユニーク制約 |
+| encrypted_password | string  | NOT NULL   |
+| name               | string  | NOT NULL   |
+| profile            | text    | NOT NULL   |
+| occupation         | text    | NOT NULL   |
+| position           | text    | NOT NULL   |
 
-Things you may want to cover:
+## Association
+- has_many :prototypes
+- has_many :comments
 
-* Ruby version
+## prototypes table
 
-* System dependencies
+| Column             |  Type     |  Option         |
+|--------------------------------------------------|
+| title              | string    | NOT NULL        |
+| catch_copy         | text      | NOT NULL        |
+| concept            | text      | NOT NULL        |
+| user               | references| NOT NULL,外部キー|
 
-* Configuration
+## Association
+- belongs_to :users
+- has_many :comments
 
-* Database creation
+## comments table
 
-* Database initialization
+| Column             | Type      | NOT NULL        |
+|--------------------------------------------------|
+| content            | text      | NOT NULL        |
+| prototype          | references| NOT NULL,外部キー|
+| user               | references| NOT NULL,外部キー|
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Association
+- belongs_to :users
+- belongs_to :prototype
