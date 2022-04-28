@@ -3,15 +3,13 @@
 |     Column         |  Type   |      Option        |
 |---------------------------------------------------|
 | nickname           | string  | NOT NULL           |
-| email              | string  | NOT NULL           |
+| email              | string  | NOT NULL,一意性制約  |
 | encrypted_password | string  | NOT NULL           |
 | last_name          | string  | NOT NULL           |
 | first_name         | string  | NOT NULL           |
 | last_name_kana     | string  | NOT NULL           |
 | first_name_kana    | string  | NOT NULL           |
-| birth_year_id      | integer | NOT NULL           |
-| birth_month_id     | integer | NOT NULL           |
-| birth_day_id       | integer | NOT NULL           |
+| birth_day          | date    | NOT NULL           |
 
 
 
@@ -30,24 +28,24 @@
 | shipping_fee_id    | integer   | NOT NULL                   |
 | shipping_area_id   | integer   | NOT NULL                   |
 | days_to_ship_id    | integer   | NOT NULL                   |
-| price              | string    | NOT NULL                   |
-| seller_id          |references | NOT NULL,foreign_key: true |
+| price              | integer   | NOT NULL                   |
+| user               |references | NOT NULL,foreign_key: true |
 
 ## Association
-- belongs_to :users
-- has_one :orders
+- belongs_to :user
+- has_one :order
 
 ## orders table
 
 | Column           | Type      | NOT NULL                   |
 |-----------------------------------------------------------|
-| item_id          | references| NOT NULL,foreign_key: true |
-| buyer_id         | references| NOT NULL,foreign_key: true |
+| item             | references| NOT NULL,foreign_key: true |
+| user             | references| NOT NULL,foreign_key: true |
 
 ## Association
-- belongs_to :users
-- belongs_to :items
-- has_one :shippings
+- belongs_to :user
+- belongs_to :item
+- has_one :shipping
 
 ## Shippings table
 
@@ -55,12 +53,12 @@
 |------------------------------------------------------------|
 | postcode          | string    | NOT NULL                   |
 | prefecture_id     | integer   | NOT NULL                   |
-| city              | string    | NOT NULL                   |
-| block             | string    | NOT NULL                   |
-| building          | string    | NOT NULL                   |
+| city              | string    |                            |
+| block             | string    |                            |
+| building          | string    |                            |
 | phone_number      | string    | NOT NULL                   |
-| orders_id         | references| NOT NULL,foreign_key: true |
+| order             | references| NOT NULL,foreign_key: true |
 
 
 ## Association
-- belongs_to :orders
+- belongs_to :order
