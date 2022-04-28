@@ -53,8 +53,8 @@
 |------------------------------------------------------------|
 | postcode          | string    | NOT NULL                   |
 | prefecture_id     | integer   | NOT NULL                   |
-| city              | string    |                            |
-| block             | string    |                            |
+| city              | string    | NOT NULL                   |
+| block             | string    | NOT NULL                   |
 | building          | string    |                            |
 | phone_number      | string    | NOT NULL                   |
 | order             | references| NOT NULL,foreign_key: true |
