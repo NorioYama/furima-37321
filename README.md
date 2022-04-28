@@ -1,15 +1,15 @@
 ## users table
 
-|     Column         |  Type   |      Option        |
-|---------------------------------------------------|
-| nickname           | string  | NOT NULL           |
-| email              | string  | NOT NULL,一意性制約  |
-| encrypted_password | string  | NOT NULL           |
-| last_name          | string  | NOT NULL           |
-| first_name         | string  | NOT NULL           |
-| last_name_kana     | string  | NOT NULL           |
-| first_name_kana    | string  | NOT NULL           |
-| birth_day          | date    | NOT NULL           |
+|     Column         |  Type   |      Option          |
+|-----------------------------------------------------|
+| nickname           | string  | NOT NULL             |
+| email              | string  | NOT NULL,unique:true |
+| encrypted_password | string  | NOT NULL             |
+| last_name          | string  | NOT NULL             |
+| first_name         | string  | NOT NULL             |
+| last_name_kana     | string  | NOT NULL             |
+| first_name_kana    | string  | NOT NULL             |
+| birth_day          | date    | NOT NULL             |
 
 
 
@@ -26,7 +26,7 @@
 | category_id        | integer   | NOT NULL                   |
 | condition_id       | integer   | NOT NULL                   |
 | shipping_fee_id    | integer   | NOT NULL                   |
-| shipping_area_id   | integer   | NOT NULL                   |
+| prefecture_id      | integer   | NOT NULL                   |
 | days_to_ship_id    | integer   | NOT NULL                   |
 | price              | integer   | NOT NULL                   |
 | user               |references | NOT NULL,foreign_key: true |

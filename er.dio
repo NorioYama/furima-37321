@@ -126,7 +126,7 @@
                 <mxCell id="185" style="shape=partialRectangle;html=1;whiteSpace=wrap;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;top=0;left=0;bottom=0;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="15" vertex="1">
                     <mxGeometry y="222" width="139" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="186" value="shipping_area_id" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;pointerEvents=1;" parent="185" vertex="1">
+                <mxCell id="186" value="prefecture_id" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;pointerEvents=1;" parent="185" vertex="1">
                     <mxGeometry width="139" height="40" as="geometry">
                         <mxRectangle width="139" height="40" as="alternateBounds"/>
                     </mxGeometry>
