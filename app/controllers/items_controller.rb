@@ -24,7 +24,7 @@ class ItemsController < ApplicationController
 
   def edit
     redirect_to action: :index unless user_signed_in? && current_user == @item.user
-    redirect_to action: :index if Order.exists?(item_id: @item.id) && current_user == @item.user
+    redirect_to action: :index if Order.exists?(item_id: @item.id) && user_signed_in? && current_user == @item.user
   end
 
   def update

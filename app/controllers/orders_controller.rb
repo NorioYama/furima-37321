@@ -5,6 +5,7 @@ class OrdersController < ApplicationController
   def index
     @order_shipping = OrderShipping.new
     redirect_to root_path if Order.exists?(item_id: @item.id) && user_signed_in?
+    redirect_to root_path if user_signed_in? && @item.user == current_user
   end
 
   def create

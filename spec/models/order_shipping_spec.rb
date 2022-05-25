@@ -44,6 +44,11 @@ RSpec.describe OrderShipping, type: :model do
         @order_shipping.valid?
         expect(@order_shipping.errors.full_messages).to include("Block can't be blank")
       end
+      it '電話番号が空ては登録できない' do
+        @order_shipping.phone_number = ''
+        @order_shipping.valid?
+        expect(@order_shipping.errors.full_messages).to include("Phone number can't be blank")
+      end
       it '電話番号が（ー）ハイフンが入っていては登録できない' do
         @order_shipping.phone_number = '052-000-000'
         @order_shipping.valid?
