@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Item, type: :model do
-  before do
-    @item = FactoryBot.build(:item)
-  end
-
   describe '出品登録' do
+    before do
+      @item = FactoryBot.build(:item)
+    end
+
     context '出品登録できるとき' do
       it '全てのフォームが入力されれば登録できる' do
         expect(@item).to be_valid
