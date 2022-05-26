@@ -2,8 +2,8 @@ FactoryBot.define do
   factory :item do
     product_name { Faker::Commerce.product_name }
     product_description { Faker::Lorem.sentence }
-    category_id { Faker::Number.between(from: 2, to: 21) }
-    condition_id { Faker::Number.between(from: 2, to: 8) }
+    category_id { Faker::Number.between(from: 2, to: 11) }
+    condition_id { Faker::Number.between(from: 2, to: 7) }
     shipping_fee_id { Faker::Number.between(from: 2, to: 4) }
     prefecture_id   { Faker::Number.between(from: 2, to: 48) }
     days_to_ship_id { Faker::Number.between(from: 2, to: 3) }
